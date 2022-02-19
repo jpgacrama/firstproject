@@ -9,11 +9,6 @@ class ProductsController extends Controller
     public function index() {
         $title = 'Welcome to my Laravel Course';
         $description = 'Created by Jonas';
-
-        $data = [
-            'productOne' => 'iPhone',
-            'productTwo' => 'Samsung'
-        ];
         
         return view('products.index')->with('data', $data);
     }
@@ -22,7 +17,14 @@ class ProductsController extends Controller
         return 'About Us page';
     }
 
-    public function show($id) {
-        return $id;
+    public function show($name) {
+        $data = [
+            'iphone' => 'iPhone',
+            'samsung' => 'Samsung',
+        ];
+
+        return view('products.index', [
+            'products' => $data[$name] ?? 'Product ' . $name . ' does not exist.'
+        ]);
     }
 }
