@@ -7,10 +7,8 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
     public function index() {
-        $title = 'Welcome to my Laravel Course';
-        $description = 'Created by Jonas';
-        
-        return view('products.index')->with('data', $data);
+        print_r(route('products'));
+        return view('products.index');
     }
 
     public function about() {
