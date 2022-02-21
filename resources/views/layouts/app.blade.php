@@ -1,3 +1,5 @@
+{{-- This is the PARENT BLADE which children blades extends from --}}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
